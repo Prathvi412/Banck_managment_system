@@ -1,4 +1,4 @@
-
+    
 package banck_managment;
 import java.awt.*;
 import javax.swing.*;
@@ -190,6 +190,9 @@ public class Signupthree extends JFrame implements ActionListener{
                     conn.s.executeUpdate(query2);
 
                     JOptionPane.showMessageDialog(null,"cardnumber:"+cardnumber +"\n Pin:"+pinnumber);
+                    setVisible(false);
+                    new Deposit(pinnumber).setVisible(false);
+                    
                 }
                 
             }catch(Exception e){
@@ -198,7 +201,8 @@ public class Signupthree extends JFrame implements ActionListener{
             
             
         }else if(ae.getSource()==cancel) {
-            
+            setVisible(false);
+            new Login().setVisible(true);
         }
         
     }
